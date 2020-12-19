@@ -16,6 +16,7 @@ static int my_init_module(void)
    for_each_process(task)
    {
      printk("Process Name: %s, \t PID: %d, \t Process state: %ld\n", task->comm, task->pid, task->state);
+     // // The details of the different task structure  and its variables like state etc can be seen from header: linux/sched.h
    }
    return 0;
 }
