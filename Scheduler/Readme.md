@@ -1,6 +1,12 @@
 
+SCHED_FIFO and SCHED_RR belong to the real time scheduling algorithms "class". SCHED_OTHER is nothing but the scheduling algorithm for normal processes in the system, more popularly known as the CFS(Completely Fair Scheduler) algorithm.
+
+SCHED_OTHER has a much lower priority
+
 CFS (Complete fair scheduling) is the scheduling for non-realtime processes.
 All schedule classes CFS, RT etc should be instance of sched_class.
+
+(Ref: https://stackoverflow.com/questions/15670460/linux-cfs-volunteer-context-switches-sched-other-sched-fifo)
 
 
 https://elixir.bootlin.com/linux/latest/source/kernel/sched/sched.h
