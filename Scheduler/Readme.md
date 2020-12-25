@@ -37,8 +37,9 @@ Following Members for scheduling are part of
 	}
 
 To set the scheduler use the following:
+
    	struct sched_param param = { .sched_priority = prio };
-   	sched_setscheduler(current, SCHED_FIFO, &param);
+   	sched_setscheduler(current, SCHED_OTHER, &param); // SCHED_OTHER is for CFS type
 
 
 
