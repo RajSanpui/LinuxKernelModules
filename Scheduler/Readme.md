@@ -40,12 +40,24 @@ To set the scheduler use the following:
 
    	struct sched_param param = { .sched_priority = prio };
    	sched_setscheduler(current, SCHED_OTHER, &param); // SCHED_OTHER is for CFS type
+	
+To attach scheduler to kernel threads use the following:
+
+	default_task = kthread_create(default_task_handler_fn,
+				(void*)"arguments as char pointer","thread_name"); // kthread_create returns task_struct
+	kthread_bind(default_task,set_current_cpu);
+
+	/*@brief set scheduler priority to default task
+	*/
+	sched_setscheduler(default_task, SCHED_FIFO, &task_sched_params); // Attach scheduler to kernel thread
 
 
 
 https://stackoverflow.com/questions/15670460/linux-cfs-volunteer-context-switches-sched-other-sched-fifo?rq=1
 https://stackoverflow.com/questions/27076350/what-does-sched-priority-in-struct-sched-param-refer-to
 https://stackoverflow.com/questions/16042123/in-linux-kernel-is-the-following-way-right-to-create-a-real-time-kthread
+
+Reference: https://embetronicx.com/tutorials/linux/device-drivers/linux-device-drivers-tutorial-kernel-thread/
 
 Process Priority: 
 The nice value of any normal process ranges between 19 (lowest priority) and -20 (highest priority), with 0 being the default value. A higher nice value indicates a lower priority (the process is being nicer to other processes). Real-time processes are prioritized between 0 and 99 (static priority). All these priority ranges are from the perspective of the user.
