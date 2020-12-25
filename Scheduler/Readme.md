@@ -11,17 +11,18 @@ All schedule classes CFS, RT etc should be instance of sched_class.
 
 https://elixir.bootlin.com/linux/latest/source/kernel/sched/sched.h
 
-struct sched_class {
-     .
-     .
-     .
-     extern const struct sched_class stop_sched_class;
-     extern const struct sched_class dl_sched_class;
-     extern const struct sched_class rt_sched_class;
-     extern const struct sched_class fair_sched_class;
-     extern const struct sched_class idle_sched_class;
 
-}
+	struct sched_class {
+     			.
+     			.
+     			.
+     			extern const struct sched_class stop_sched_class;
+     			extern const struct sched_class dl_sched_class;
+     			extern const struct sched_class rt_sched_class;
+     			extern const struct sched_class fair_sched_class;
+     			extern const struct sched_class idle_sched_class;
+
+	}
 
 
 Following Members for scheduling are part of task_struct.
