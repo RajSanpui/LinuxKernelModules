@@ -47,3 +47,10 @@ https://stackoverflow.com/questions/15670460/linux-cfs-volunteer-context-switche
 https://stackoverflow.com/questions/27076350/what-does-sched-priority-in-struct-sched-param-refer-to
 https://stackoverflow.com/questions/16042123/in-linux-kernel-is-the-following-way-right-to-create-a-real-time-kthread
 
+Process Priority: 
+The nice value of any normal process ranges between 19 (lowest priority) and -20 (highest priority), with 0 being the default value. A higher nice value indicates a lower priority (the process is being nicer to other processes). Real-time processes are prioritized between 0 and 99 (static priority). All these priority ranges are from the perspective of the user.
+
+
+Kernel's perspective of priorities:
+Linux however looks at process priorities from its own perspective. It adds a lot more computation for arriving at the priority of a process. Basically, it scales all priorities between 0 to 139, where 0 to 99 is assigned for real-time processes and 100 to 139 represents the nice value range (-20 to 19).
+
