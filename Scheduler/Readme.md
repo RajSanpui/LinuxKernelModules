@@ -25,14 +25,16 @@ https://elixir.bootlin.com/linux/latest/source/kernel/sched/sched.h
 	}
 
 
-Following Members for scheduling are part of task_struct.
-	sched_class
-        struct sched_info	sched_info;
-  	int				prio;
-	int				static_prio;
-	int				normal_prio;
-	unsigned int			rt_priority;
+Following Members for scheduling are part of 
 
+	struct task_struct {
+		sched_class
+        	struct sched_info	sched_info;
+  		int				prio;
+		int				static_prio;
+		int				normal_prio;
+		unsigned int			rt_priority;
+	}
 
 To set the scheduler use the following:
    	struct sched_param param = { .sched_priority = prio };
