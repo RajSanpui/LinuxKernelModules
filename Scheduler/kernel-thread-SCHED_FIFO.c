@@ -24,7 +24,7 @@ static int worker_task_handler_fn(void *arguments)
 
 
                 if (signal_pending(worker_task))
-                                    break;
+                    break;
         }
 
         do_exit(0);
@@ -44,7 +44,7 @@ static int default_task_handler_fn(void *arguments)
 
 
             if (signal_pending(default_task))
-                            break;
+                  break;
         }
 
         printk("Default task exiting\n");
@@ -93,14 +93,15 @@ static int __init kernel_thread_init(void)
         wake_up_process(default_task);
 
         if(worker_task)
-                printk("Worker thread running\n");
+             printk("Worker thread running\n");
         else
-                printk("Worker task can't start\n");
+             printk("Worker task can't start\n");
 
-                if(default_task)
-                printk("Default thread running\n");
+        
+        if(default_task)
+            printk("Default thread running\n");
         else
-                printk("Default task can't start\n");
+            printk("Default task can't start\n");
 
         return 0;
 }
@@ -112,12 +113,12 @@ static void __exit kernel_thread_exit(void)
 
 
         if(worker_task)
-                kthread_stop(worker_task);
+            kthread_stop(worker_task);
 
         printk("Worker task stopped\n");
 
         if(default_task)
-                kthread_stop(default_task);
+            kthread_stop(default_task);
 
         printk("Default task stopped\n");
 
