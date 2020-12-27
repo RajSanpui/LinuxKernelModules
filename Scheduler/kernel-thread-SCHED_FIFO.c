@@ -91,6 +91,9 @@ static int __init kernel_thread_init(void)
 
         wake_up_process(worker_task);
         wake_up_process(default_task);
+        
+        // There is another function that does both processes (create and start). That is kthread_run(). 
+        // You can replace both kthread_create  and wake_up_process using this function.
 
         if(worker_task)
              printk("Worker thread running\n");
