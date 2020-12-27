@@ -3,7 +3,7 @@
 #include <linux/init.h>
 #include <linux/sched.h>
 #include <linux/sched/signal.h>
-#include <linux/sched/types.h>
+#include <linux/sched/types.h>      // struct sched_param.sched_priority 
 #include <linux/threads.h>          //used for allow_signal
 #include <linux/kthread.h>          //used for kthread_create
 #include <linux/delay.h>            //used for ssleep()
