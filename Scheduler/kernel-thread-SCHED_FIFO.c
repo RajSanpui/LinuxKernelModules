@@ -39,12 +39,12 @@ static int default_task_handler_fn(void *arguments)
 
         while(!kthread_should_stop())
         {
-                printk("Default thread executing on system CPU:%d \n",get_cpu());
+            printk("Default thread executing on system CPU:%d \n",get_cpu());
                 ssleep(DEFAULT_THREAD_DELAY);
 
 
             if (signal_pending(default_task))
-                  break;
+                break;
         }
 
         printk("Default task exiting\n");
@@ -59,7 +59,7 @@ static int __init kernel_thread_init(void)
 
         struct sched_param task_sched_params =
         {
-                        .sched_priority = MAX_RT_PRIO
+                .sched_priority = MAX_RT_PRIO
         };
 
         task_sched_params.sched_priority = 90;
@@ -93,7 +93,7 @@ static int __init kernel_thread_init(void)
         wake_up_process(default_task);
         
         // There is another function that does both processes (create and start). That is kthread_run(). 
-        // You can replace both kthread_create  and wake_up_process using this function.
+        // You can replace both kthread_create and wake_up_process using this function.
 
         if(worker_task)
              printk("Worker thread running\n");
