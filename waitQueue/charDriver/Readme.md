@@ -1,6 +1,6 @@
 Building and Testing Driver
 Build the driver by using Makefile (sudo make)
-Load the driver using sudo insmod driver.ko 
+Load the driver using ```sudo insmod driver.ko ```
 
 Then Check the dmesg 
 
@@ -11,7 +11,7 @@ Waiting For Event...
 ```
 
 
-So that thread is waiting for the event. Now we will send the event by reading the driver using sudo cat /dev/etx_device \
+So that thread is waiting for the event. Now we will send the event by reading the driver using ```sudo cat /dev/etx_device ```
 Now check the dmesg 
 
 ```Device File Opened...!!!
