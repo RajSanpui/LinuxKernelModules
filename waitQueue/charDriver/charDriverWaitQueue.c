@@ -1,11 +1,4 @@
-/****************************************************************************//**
-*  \file       driver.c
-*
-*  \details    Simple linux driver (Waitqueue Dynamic method)
-*
-*  \author     EmbeTronicX
-*
-* *******************************************************************************/
+
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/module.h>
@@ -184,3 +177,5 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Raj Kumar Sanpui");
 MODULE_DESCRIPTION("Linux Driver using waitQueue");
 MODULE_VERSION("1.0");
+
+// https://embetronicx.com/tutorials/linux/device-drivers/waitqueue-in-linux-device-driver-tutorial/
