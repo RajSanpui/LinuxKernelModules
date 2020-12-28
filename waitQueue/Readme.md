@@ -15,7 +15,9 @@ Operation:
 ```init_waitqueue_head(&my_queue);```
 
 3. Define the waiting queue
-```DECLARE_WAITQUEUE(name, tsk)```
+```
+DECLARE_WAITQUEUE(name, tsk)
+```
 
 4. Add / Remove queue
 
