@@ -2,7 +2,7 @@ Building and Testing Driver
 Build the driver by using Makefile (sudo make)
 Load the driver using sudo insmod driver.ko 
 
-Then Check the dmesg \
+Then Check the dmesg 
 
 ```Major = 246 Minor = 0
 Thread Created successfully
