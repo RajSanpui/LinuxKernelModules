@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
 
    printf("Message received: %s",recv.mesg_text);
 
-   /* Destroy the shared memory */
+   /* Destroy the message queue */
    msgctl(msqid, IPC_RMID, NULL);
 }
