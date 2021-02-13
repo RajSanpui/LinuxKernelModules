@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
    char *data;
 
    key_t key =67676; /* Alt: key_t key = ftok("shmfile",65); */
+   
    /*  create the segment: */
    if ((shmid = shmget(key, SHM_SIZE, 0644 | IPC_CREAT)) == -1) {
         perror("shmget");
