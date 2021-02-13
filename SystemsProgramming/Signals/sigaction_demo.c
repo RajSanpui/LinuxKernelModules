@@ -1,4 +1,4 @@
-include <signal.h>
+#include <signal.h>
 #include <stdio.h>
 
 void handler(int sig)
