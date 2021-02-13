@@ -35,7 +35,7 @@ int main()
 	pthread_join(tid1, NULL); 
 	pthread_join(tid2, NULL); 
 	
-  sem_destroy(&mutex);
+        sem_destroy(&myMutex);
   
 	return 0; 
 } 
