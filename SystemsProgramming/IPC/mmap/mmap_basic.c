@@ -15,7 +15,7 @@ int main()
             perror("munmap");
 
 }
-/* mmap maps a file into memory at a user given address. Advantage: Faster access, compared to a file write which reads/writes to disk
+/* mmap maps a file into memory at a user given address (first field) at a specified offset (last field). Advantage: Faster access, compared to a file write which reads/writes to disk
    disk access is slower than memory access, hence the advantage.
   
    map = mmap(0, FILESIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
