@@ -29,4 +29,8 @@ int main(int argc, char *argv[])
   /* Write to the shared memory */
    strcpy(data, "Hello Shared Memory !!");
    printf("Reading shared memory: %s \n",data);
+   
+  /* Destroy the shared memory */
+   shmctl(shmid, IPC_RMID, NULL);
+
 }
