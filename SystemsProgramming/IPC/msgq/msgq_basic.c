@@ -37,3 +37,13 @@ int main(int argc, char *argv[])
    /* Destroy the message queue */
    msgctl(msqid, IPC_RMID, NULL);
 }
+
+/* Message Type:
+If msgtype is 0 − Reads the first received message in the queue
+
+If msgtype is +ve − Reads the first message in the queue of type msgtype 
+(if msgtype is 10, then reads only the first message of type 10 even though other types may be in the queue at the beginning)
+
+If msgtype is –ve − Reads the first message of lowest type less than or equal to the absolute value of message type 
+(say, if msgtype is -5, then it reads first message of type less than 5 i.e., message type from 1 to 5)
+*/
