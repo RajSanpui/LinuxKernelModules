@@ -22,6 +22,10 @@ int main()
            SCHED_RR 
         */
         ret = pthread_attr_setschedpolicy(&tattr, SCHED_OTHER);
+        
+        /* setting a new thread stack size */
+        stacksize = (PTHREAD_STACK_MIN + 0x4000);
+        ret = pthread_attr_setstacksize(&tattr, stacksize);
 
         pthread_create(&tid, &tattr, myThreadFun, "Thread1\n");
 
