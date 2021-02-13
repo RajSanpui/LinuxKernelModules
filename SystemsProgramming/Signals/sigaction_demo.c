@@ -25,6 +25,7 @@ int main()
    sa.sa_sigaction => Pointer to signal catching function with multiple args.
                  void(*) (int, siginfo_t *, void *)
                  
-   https://pubs.opengroup.org/onlinepubs/007904875/functions/sigaction.html
+   sigaction(SIGINT, &sa, NULL) => If the last argument is not NULL, it stores the current signal actions in this set.
 
+   https://pubs.opengroup.org/onlinepubs/007904875/functions/sigaction.html
 */
