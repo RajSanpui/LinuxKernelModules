@@ -1,3 +1,11 @@
+   /*  Author - Raj Kumar Sanpui
+    * 
+    * In this module we just focus on understanding different methods of allocating major and minor number to a driver:
+    *   register_chrdev  OR  register_chrdev_region versus alloc_chrdev_region
+    *   
+    *   See the notes on hello_init( ) function
+    *
+    */
     #include <linux/module.h>
     #include <linux/kernel.h>
     #include <linux/fs.h>
