@@ -103,6 +103,7 @@ Example:
       
 
 alloc_chrdev_region
+
      ret = alloc_chrdev_region(&device_number,0,1,"pcd_devices");
      
      int alloc_chrdev_region(dev_t *dev, unsigned int firstminor,unsigned int count, char *name);
