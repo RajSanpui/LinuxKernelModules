@@ -93,6 +93,7 @@ Also functions that end in _region (i.e. alloc_chrdev_region and register_chrdev
 Whereas register_chrdev and _register_chrdev call cdev_alloc (so the driver does not need to do so).
 
 Example:
+
       if (register_chrdev(500, "chr_device", &fops)<0)             
       In the above example, cdev_init is called, so we can directly pass file_operations fops argument to it.
       
