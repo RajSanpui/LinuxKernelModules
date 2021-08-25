@@ -1,4 +1,7 @@
 
+Char Driver Creation Steps
+----------------------------
+
 Step 1. Dynamically allocate a device number 
 ---------------------------------------------
 
