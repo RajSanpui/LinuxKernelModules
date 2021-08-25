@@ -100,3 +100,16 @@ Example:
       
       if (register_chrdev_region(490, 5, "chr_dev_region11")<0) 
       Here cdev_init is not automatically called in case of "region", so the driver has to call cdev_init and pass file_operations argument to it.
+      
+
+alloc_chrdev_region
+     ret = alloc_chrdev_region(&device_number,0,1,"pcd_devices");
+     
+     int alloc_chrdev_region(dev_t *dev, unsigned int firstminor,unsigned int count, char *name);
+
+
+     dev -> The dev_t variable type,which will get the major number that the kernel allocates.
+     firstminor -> The first minor number in case you are looking for a series of minor numbers for your driver.
+     count -> The number of contiguous set of major numbers that you want to be allocated.
+     name -> Name of your device that should be associated with the major numbers. The same name will appear in /proc/devices.
+ 
