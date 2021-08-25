@@ -91,4 +91,11 @@ APIs that ends in "_region" will alocate a range of major and minor numbers. E.g
 Also functions that end in _region (i.e. alloc_chrdev_region and register_chrdev_region) do not call cdev_init at all (so the driver has to call cdev_alloc or cdev_init).
 
 Whereas register_chrdev and _register_chrdev call cdev_alloc (so the driver does not need to do so).
-     
+
+Example:
+      if (register_chrdev(500, "chr_device", &fops)<0)             
+      In the above example, cdev_init is called, so we can directly pass file_operations fops argument to it.
+      
+      
+      if (register_chrdev_region(490, 5, "chr_dev_region11")<0) 
+      Here cdev_init is not automatically called in case of "region", so the driver has to call cdev_init and pass file_operations argument to it.
