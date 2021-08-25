@@ -76,3 +76,19 @@ Step 6. De-register the driver
         unregister_chrdev_region(device_number,1);
         pr_info("module unloaded\n");
     }
+    
+
+
+Device number allocation
+----------------------------
+
+register_* will do a major number allocation based on hardcoded value you pass. 
+alloc_* will do a dynamic allocation. O/S will choose a major number itself.
+
+APIs that ends in "_region" will alocate a range of major and minor numbers. E.g alloc_chrdev_region.
+
+
+Also functions that end in _region (i.e. alloc_chrdev_region and register_chrdev_region) do not call cdev_init at all (so the driver has to call cdev_alloc or cdev_init).
+
+Whereas register_chrdev and _register_chrdev call cdev_alloc (so the driver does not need to do so).
+     
